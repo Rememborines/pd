@@ -72,12 +72,12 @@
 #X obj 468 156 delay 800;
 #X msg -74 21 reset \, dimen 1080 1920 \, view 0 0 2.66 0 0 0 -360
 1 0 \, offset -180 -320 \, cursor 0 \, border 0 \, create \, 1;
-#X obj -70 316 route c r p;
 #X msg -28 363 shutdown -s -f;
 #X msg -49 341 shutdown -r -f;
 #X obj 11 396 system;
 #X obj 118 397 sys_gui;
 #X msg 118 365 wm state .pdwindow withdraw;
+#X obj -70 316 route countdown restart poweroff;
 #X connect 1 0 2 0;
 #X connect 2 0 63 0;
 #X connect 3 0 0 0;
@@ -103,7 +103,7 @@
 #X connect 30 0 26 0;
 #X connect 31 0 26 0;
 #X connect 32 0 26 0;
-#X connect 35 0 67 0;
+#X connect 35 0 72 0;
 #X connect 37 0 36 1;
 #X connect 38 0 36 0;
 #X connect 39 0 36 0;
@@ -141,9 +141,9 @@
 #X connect 63 0 64 0;
 #X connect 65 0 49 0;
 #X connect 66 0 0 0;
-#X connect 67 0 33 0;
-#X connect 67 1 69 0;
-#X connect 67 2 68 0;
-#X connect 68 0 70 0;
-#X connect 69 0 70 0;
-#X connect 72 0 71 0;
+#X connect 67 0 69 0;
+#X connect 68 0 69 0;
+#X connect 71 0 70 0;
+#X connect 72 0 33 0;
+#X connect 72 1 68 0;
+#X connect 72 2 67 0;
