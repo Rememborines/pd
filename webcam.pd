@@ -1,9 +1,9 @@
 #N canvas 1312 816 834 442 10;
-#X obj -75 108 gemwin;
-#X obj -73 166 pix_video;
-#X obj -73 191 pix_texture;
-#X msg -64 84 0 \, destroy;
-#X obj -73 142 gemhead 50;
+#X obj -74 102 gemwin;
+#X obj -73 161 pix_video;
+#X obj -73 186 pix_texture;
+#X msg -63 78 0 \, destroy;
+#X obj -73 137 gemhead 50;
 #X obj 265 -8 bng 15 250 50 0 start empty start 17 7 0 10 -262144 -1
 -1;
 #X obj 265 20 bng 15 250 50 0 stop empty stop 17 7 0 10 -262144 -1
@@ -17,7 +17,7 @@
 #X obj 324 16 bng 15 250 50 0 unfade empty unfade 17 7 0 10 -262144
 -1 -1;
 #X obj -64 0 r start;
-#X obj -64 63 r stop;
+#X obj -63 57 r stop;
 #X obj 104 144 r fade;
 #X obj 148 144 r unfade;
 #X obj 53 65 gemhead 51;
@@ -31,17 +31,17 @@
 #X obj 539 291 s fade;
 #X obj 468 389 s unfade;
 #X obj 688 154 readsf~ 2;
-#X obj 689 192 dac~;
+#X obj 688 192 dac~;
 #X msg 638 13 start;
 #X msg 599 147 open 3.wav;
 #X msg 600 176 open 2.wav;
 #X msg 599 205 open 1.wav;
 #X msg 598 232 open dream.wav;
-#X obj -71 396 s countdown;
+#X obj -70 396 s countdown;
 #X obj 53 245 rectangle 5.33 4;
-#X obj -70 291 mrpeach/udpreceive 9002;
-#X obj 267 184 text2d;
-#X msg 300 157 750;
+#X obj -70 268 mrpeach/udpreceive 9002;
+#X obj 266 184 text2d;
+#X msg 299 157 750;
 #X obj 266 131 color 1 1 1;
 #X msg 369 196 text 3;
 #X msg 369 222 text 2;
@@ -67,8 +67,8 @@
 #X obj 468 260 t b b b;
 #X obj 310 301 delay 100;
 #X msg 310 365 \; pd dsp 1 \; pd-webcam.pd vis 0;
-#X obj -73 239 pix_coordinate;
-#X obj -73 265 rectangle 1.78 1;
+#X obj -73 214 pix_coordinate;
+#X obj -73 240 rectangle 1.78 1;
 #X obj 468 156 delay 800;
 #X msg -74 21 reset \, dimen 1080 1920 \, view 0 0 2.66 0 0 0 -360
 1 0 \, offset -180 -320 \, cursor 0 \, border 0 \, create \, 1;
@@ -78,6 +78,7 @@
 #X obj 118 397 sys_gui;
 #X msg 118 365 wm state .pdwindow withdraw;
 #X obj -70 316 route countdown restart poweroff;
+#X obj -70 292 moocow/bytes2any;
 #X connect 1 0 2 0;
 #X connect 2 0 63 0;
 #X connect 3 0 0 0;
@@ -103,7 +104,7 @@
 #X connect 30 0 26 0;
 #X connect 31 0 26 0;
 #X connect 32 0 26 0;
-#X connect 35 0 72 0;
+#X connect 35 0 73 0;
 #X connect 37 0 36 1;
 #X connect 38 0 36 0;
 #X connect 39 0 36 0;
@@ -147,3 +148,4 @@
 #X connect 72 0 33 0;
 #X connect 72 1 68 0;
 #X connect 72 2 67 0;
+#X connect 73 0 72 0;
