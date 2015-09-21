@@ -1,4 +1,4 @@
-#N canvas 124 627 834 442 10;
+#N canvas 1312 816 834 442 10;
 #X obj -75 108 gemwin;
 #X obj -73 166 pix_video;
 #X obj -73 191 pix_texture;
@@ -8,9 +8,9 @@
 -1;
 #X obj 265 20 bng 15 250 50 0 stop empty stop 17 7 0 10 -262144 -1
 -1;
-#X obj 32 238 pix_mix 0;
-#X obj 32 262 pix_texture;
-#X obj 32 133 alpha;
+#X obj 53 197 pix_mix 0;
+#X obj 53 221 pix_texture;
+#X obj 53 92 alpha;
 #X obj -74 -20 loadbang;
 #X obj 325 -7 bng 15 250 50 0 fade empty fade 17 7 0 10 -262144 -1
 -1;
@@ -18,12 +18,12 @@
 -1 -1;
 #X obj -64 0 r start;
 #X obj -64 63 r stop;
-#X obj 83 185 r fade;
-#X obj 127 185 r unfade;
-#X obj 32 106 gemhead 51;
-#X obj 101 106 gemhead 52;
-#X obj 86 133 pix_image white.gif;
-#X obj 32 162 pix_image transparent.gif;
+#X obj 104 144 r fade;
+#X obj 148 144 r unfade;
+#X obj 53 65 gemhead 51;
+#X obj 122 65 gemhead 52;
+#X obj 107 92 pix_image white.gif;
+#X obj 53 121 pix_image transparent.gif;
 #X obj 393 -8 bng 15 250 50 0 countdown empty countdown 17 7 0 10 -262144
 -1 -1;
 #X obj 468 14 r countdown;
@@ -37,9 +37,9 @@
 #X msg 600 176 open 2.wav;
 #X msg 599 205 open 1.wav;
 #X msg 598 232 open dream.wav;
-#X obj -56 363 s countdown;
-#X obj 32 286 rectangle 5.33 4;
-#X obj -56 336 mrpeach/udpreceive 9002;
+#X obj -71 396 s countdown;
+#X obj 53 245 rectangle 5.33 4;
+#X obj -70 291 mrpeach/udpreceive 9002;
 #X obj 267 184 text2d;
 #X msg 300 157 750;
 #X obj 266 131 color 1 1 1;
@@ -48,8 +48,8 @@
 #X msg 369 247 text 1;
 #X msg 370 170 text;
 #X obj 266 106 gemhead 53;
-#X msg 83 207 1;
-#X msg 127 207 0.01;
+#X msg 104 166 1;
+#X msg 148 166 0.01;
 #X obj 370 105 loadbang;
 #X obj 468 50 t b b b b;
 #X obj 468 116 t b b b b;
@@ -65,13 +65,19 @@
 #X text 452 323 0;
 #X text 446 388 +3;
 #X obj 468 260 t b b b;
-#X obj 252 299 delay 100;
-#X msg 252 337 \; pd dsp 1 \; pd-webcam.pd vis 0;
+#X obj 310 301 delay 100;
+#X msg 310 365 \; pd dsp 1 \; pd-webcam.pd vis 0;
 #X obj -73 239 pix_coordinate;
 #X obj -73 265 rectangle 1.78 1;
 #X obj 468 156 delay 800;
 #X msg -74 21 reset \, dimen 1080 1920 \, view 0 0 2.66 0 0 0 -360
 1 0 \, offset -180 -320 \, cursor 0 \, border 0 \, create \, 1;
+#X obj -70 316 route c r p;
+#X msg -28 363 shutdown -s -f;
+#X msg -49 341 shutdown -r -f;
+#X obj 11 396 system;
+#X obj 118 397 sys_gui;
+#X msg 118 365 wm state .pdwindow withdraw;
 #X connect 1 0 2 0;
 #X connect 2 0 63 0;
 #X connect 3 0 0 0;
@@ -97,7 +103,7 @@
 #X connect 30 0 26 0;
 #X connect 31 0 26 0;
 #X connect 32 0 26 0;
-#X connect 35 0 33 0;
+#X connect 35 0 67 0;
 #X connect 37 0 36 1;
 #X connect 38 0 36 0;
 #X connect 39 0 36 0;
@@ -110,6 +116,7 @@
 #X connect 46 0 37 0;
 #X connect 46 0 42 0;
 #X connect 46 0 61 0;
+#X connect 46 0 72 0;
 #X connect 47 0 23 0;
 #X connect 47 1 28 0;
 #X connect 47 2 29 0;
@@ -135,3 +142,9 @@
 #X connect 63 0 64 0;
 #X connect 65 0 49 0;
 #X connect 66 0 0 0;
+#X connect 67 0 33 0;
+#X connect 67 1 69 0;
+#X connect 67 2 68 0;
+#X connect 68 0 70 0;
+#X connect 69 0 70 0;
+#X connect 72 0 71 0;
